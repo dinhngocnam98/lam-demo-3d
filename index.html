@@ -3,32 +3,20 @@
 <head>
 	<!-- Meta -->
     <meta charset="utf-8">
-    <title>Virtual Reality Museum in A-Frame</title>
+    <title>Demo virtual 3D phòng trưng bày</title>
 
-    <meta property="og:title" content="Virtual Reality Museum in A-Frame" />
+    <meta property="og:title" content="Demo virtual 3D phòng trưng bày" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://blog.r23.de/museum/" />
-    <meta property="og:image" content="https://blog.r23.de/museum/screenshots/thehall1.jpg" />
-    <meta property="og:description" content="WebVR demo that displays art " />
-	<meta property="article:tag" content="WebVR" />
-	<meta property="article:tag" content="A-Frame" />
-	<meta property="article:section" content="Virtual Reality" />
-
-    <meta name="twitter:card" content="summary_large_image">
-
-    <meta name="twitter:title" content="Virtual Reality Museum in A-Frame">
-    <meta name="twitter:description" content="WebVR demo that displays art ">
-    <meta name="twitter:image" content="https://blog.r23.de/museum/screenshots/thehall1.jpg">
 
 	<!-- Favicon -->
     <link rel="icon" href="favicon.png">
-	
+
 	<!-- Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-	
-    <meta name="description" content="Virtual-Reality-Museum forked from Cecropia/thehallaframe https://cecropia.github.io/thehallaframe/">
+
+    <meta name="description" content="Demo virtual 3D phòng trưng bày">
 	<meta name="author" content="">
-		
+
     <link rel="stylesheet" type="text/css" href="style.css">
 
 
@@ -55,14 +43,12 @@
 
     <div id="container" class="container">
       <div class="info">
-        <div class="company"><a href="http://www.cecropiasolutions.com" target="_blank">cecropiasolutions.com</a></div>
-        <div class="title">The Hall</div>
-        <div class="logo"><a href="http://www.cecropiasolutions.com" target="_blank"><img src="img/cec_logo.png"></a></div>
-        <a class="button" id="start_experience" href="#">start experience</a>
+        <div class="title">Demo</div>
+        <a class="button" id="start_experience" href="#">Bắt đầu</a>
         <div class="instructions">
-          <div><strong>VR</strong>: Hand controllers and teleport with trigger.</div>
+          <div><strong>VR</strong>: Sử dụng điều khiển VR để di chuyển</div>
           <div><strong>Desktop</strong>: Keyboard (WASD/arrows) and mouse.</div>
-          <div><strong>Mobile</strong>: Gaze cursor and teleportation.</div>
+          <div><strong>Mobile</strong>: Chọn vị trí cần di chuyển và tới vị trí đó</div>
         </div>
       </div>
     </div>
@@ -90,16 +76,19 @@
 
         <img id="sky_sphere-texture" src="textures/sky_sphere.jpg">
 
-        <a-sound src="audio/84529__cmusounddesign__02-museum.ogg"
-                 autoplay="true"
-                 loop="true"
-                 position="1 1 0"></a-sound>
+<!--        <a-sound src="audio/84529__cmusounddesign__02-museum.ogg"-->
+<!--                 autoplay="true"-->
+<!--                 loop="true"-->
+<!--                 position="1 1 0"></a-sound>-->
 
-        <a-sound src="audio/219462__cediez__musee-victoria-londres-grand-escalier.ogg"
-                 autoplay="true"
-                 loop="true"
-                 position="1 1 10"></a-sound>
-
+<!--        <a-sound src="audio/219462__cediez__musee-victoria-londres-grand-escalier.ogg"-->
+<!--                 autoplay="true"-->
+<!--                 loop="true"-->
+<!--                 position="1 1 10"></a-sound>-->
+                <a-sound src="audio/demo.ogg"
+                         autoplay="true"
+                         loop="true"
+                         position="1 1 10"></a-sound>
 
         <!-- floor -->
         <a-asset-item id="floor-obj" src="models/floor.obj"></a-asset-item>
