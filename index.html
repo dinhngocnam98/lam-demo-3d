@@ -28,14 +28,38 @@
     <script src="js/CTMLoader.js"></script>
 
     <script src="js/aframe-teleport-controls.min.js"></script>
-    <script src="js/spheres_anim.js"></script>
+  <script src="js/aframe-slice9-component.min.js"></script>
+
+  <script src="js/spheres_anim.js"></script>
     <script src="js/anim_1.js"></script>
     <script src="js/anim_2.js"></script>
     <script src="js/mocap.js"></script>
     <script src="js/envMapMaterial.js"></script>
     <script src="js/ctm_component.js"></script>
     <script src="js/mobile_component.js"></script>
+    <script>
+      AFRAME.registerComponent("toggle-visibility", {
+        init: function() {
 
+          this.toggleHandler = this.toggleVisibility.bind(this);
+
+        },
+        play: function() {
+          this.el.addEventListener('click', this.toggleHandler);
+        },
+        pause: function() {
+          this.el.removeEventListener('click', this.toggleHandler);
+        },
+        toggleVisibility: function() {
+          const description = document.querySelector(this.previousAttrValue)
+          description.setAttribute('visible', !description.getAttribute('visible'));
+        }
+      });
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+    </script>
   </head>
 
   <body>
@@ -56,7 +80,9 @@
     <!--<a-scene stats>-->
 
     <a-scene>
-
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
       <a-entity mobile></a-entity>
 
       <a-entity light="type: directional; color: #FFF; intensity: 0.5" position="2 20 0"></a-entity>
@@ -244,7 +270,11 @@
       <a-entity obj-model="obj: #lamps-obj;" material="src: #lamps-texture; side: double;"></a-entity>
 
       <!--<a-entity obj-model="obj: #david-obj;" material="src: #david-texture"></a-entity>-->
-      <a-entity ctm="src: #david-ctm; name:david;"></a-entity>
+      <a-box ctm="src: #david-ctm; name:david;" toggle-visibility="#description">
+        <a-entity ctm="src: #david-ctm; name:david;"></a-entity>
+      </a-box>
+      <a-plane color="gray" width="2.5" visible="false" height="0.8" toggle-visibility id="description" position="-8 3 0" rotation="0 90 0" text="value: Description demo; align: center; width: 5;" side="double"></a-plane>
+
 
       <!--<a-entity obj-model="obj: #female_head-obj;" material="src: #female_head-texture"></a-entity>-->
       <a-entity ctm="src: #female_head-ctm; name:female_head;"></a-entity>
